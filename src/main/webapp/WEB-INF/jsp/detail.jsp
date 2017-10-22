@@ -48,9 +48,6 @@
  							Submit
  						</button>
  					</div>
- 					
- 					
- 					
  				</div>
  			</div>
  		
@@ -66,7 +63,7 @@
 	<!-- jquery cookie 插件 -->
 	<script src="https://cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
 	<!-- jquery countdown 使用倒计时插件 -->
-	<script src="https://cdn.bootcss.com/jquery-countdown/2.0.2/jquery.countdown.min.js" ></script>
+	<script src="https://cdn.bootcss.com/jquery.countdown/2.2.0/jquery.countdown.min.js" ></script>
 
 	<script src="/seckill/resources/script/seckill.js" type="text/javascript"></script>
 	<script type="text/javascript">
