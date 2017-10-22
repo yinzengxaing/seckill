@@ -66,6 +66,7 @@
 	<script src="https://cdn.bootcss.com/jquery.countdown/2.2.0/jquery.countdown.min.js" ></script>
 
 	<script src="/seckill/resources/script/seckill.js" type="text/javascript"></script>
+	
 	<script type="text/javascript">
 	$(function(){
 		//使用EL表达式传入参数
@@ -76,7 +77,6 @@
 		});
 		
 	});
-	
 	</script>
 	
 </html>

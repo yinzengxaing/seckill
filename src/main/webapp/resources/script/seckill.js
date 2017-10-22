@@ -38,8 +38,9 @@ var seckill ={
 							$.post(killUrl,{},function(result){
 								if (result && result['success']){
 									var killResult = result['data']; 
-									var state = result['state'];
-									var stateInfo = result['stateInfo'];
+									var state = killResult['state'];
+									var stateInfo = killResult['stateInfo'];
+									
 									//3. 显示秒杀结果
 									node.html('<span class="label label-success" >'+stateInfo+'</span>')
 								}else{
@@ -116,7 +117,7 @@ var seckill ={
 						var inputPhone = $("#killPhoneKey").val();
 						if (seckill.validatePhone(inputPhone)){
 							//将电话写入cookie中
-							$.cookie('killPhone',inputPhone,{expires:70, padth:'/seckill'});
+							$.cookie('killPhone',inputPhone,{expires:7, padth:'/'});
 							//验证通过 刷新页面
 							window.location.reload();
 						}else{
