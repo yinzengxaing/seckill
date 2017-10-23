@@ -37,7 +37,6 @@ public class SeckillServiceImpl implements SeckillService {
 	@Override
 	public List<Seckill> getSeckillList() {
 		List<Seckill> queryAll = seckillDao.queryAll(0, 4);
-		System.out.println(queryAll);
 		return seckillDao.queryAll(0, 4);
 	}
 
@@ -52,7 +51,6 @@ public class SeckillServiceImpl implements SeckillService {
 		if(seckill == null){
 			return new Exposer(false, seckillId); 
 		}
-		
 		Date startTime = seckill.getStartTime();
 		Date endtime = seckill.getEndTime();
 		//系统当前时间
@@ -74,7 +72,6 @@ public class SeckillServiceImpl implements SeckillService {
 	 * 3.不是所有的方法都需要事物管理
 	 */
 	public SeckillExecution exectueSeckill(long seckillId, long userPhone, String md5) throws SeckillException, RepeatKillException, SeckillCloseException {
-		
 		if( md5 == null || !md5.equals(getMD5(seckillId))){
 			throw new SeckillCloseException("seckill data rewite");
 		}
@@ -89,8 +86,7 @@ public class SeckillServiceImpl implements SeckillService {
 			} else {
 				//秒杀成功
 				int insertCount = successKilledDao.insertSuccessKilled(seckillId, userPhone);
-				
-				if (insertCount < 0){
+				if (insertCount <= 0){
 					//重复秒杀
 					throw new RepeatKillException("seckill repeated");
 				}else{
